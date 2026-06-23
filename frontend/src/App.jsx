@@ -278,7 +278,7 @@ class Contract(gl.Contract):
 `;
 
 export default function App() {
-  const defaultContractAddress = import.meta.env.VITE_CONTRACT_ADDRESS || '0xA315505C469df0e8a53F38441Fc02909f2A08dF8';
+  const defaultContractAddress = import.meta.env.VITE_CONTRACT_ADDRESS || '0x1E0B5A8f6C6cC36969E432C36eC7eD67173857aB';
   const defaultRpcUrl = import.meta.env.VITE_RPC_URL || 'https://studio.genlayer.com/api';
 
   // Client and RPC settings

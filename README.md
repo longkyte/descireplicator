@@ -19,7 +19,7 @@ In traditional blockchains (like Ethereum or Solana), creating a decentralized s
 ## Contract Details
 
 * **Language**: Python (GenVM v0.2.16 Compatible)
-* **Contract Address**: `0xA315505C469df0e8a53F38441Fc02909f2A08dF8`
+* **Contract Address**: `0x1E0B5A8f6C6cC36969E432C36eC7eD67173857aB`
 * **RPC Endpoint**: `https://studio.genlayer.com/api`
 
 ---
