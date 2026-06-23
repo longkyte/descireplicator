@@ -142,15 +142,15 @@ class Contract(gl.Contract):
                 trunc_repl = repl_content[:4000]
                 
                 # 3. Build AI review prompt
-                prompt = f\"\"\"
+                prompt = f"""
                 You are an AI Editor-in-Chief of a Decentralized Science (DeSci) Review Board.
                 Your task is to evaluate a replication/debunking claim against an original study.
                 
                 [Original Study Content]:
-                {{trunc_orig}}
+                {trunc_orig}
                 
                 [Replication Study Content]:
-                {{trunc_repl}}
+                {trunc_repl}
                 
                 Analyze both papers and answer:
                 1. Is the replication study's methodology sound and scientific?
@@ -161,12 +161,12 @@ class Contract(gl.Contract):
                 - REJECTED: The replication study fails to disprove the original study.
                 
                 Respond ONLY with a JSON object in this exact schema:
-                {{{{
-                    \\"verdict\\": \\"DEBUNKED\\" or \\"REJECTED\\",
-                    \\"methodology_score\\": <integer from 0 to 100>,
-                    \\"reason\\": \\"<brief justification details>\\"
-                }}}}
-                \"\"\"
+                {{
+                    "verdict": "DEBUNKED" or "REJECTED",
+                    "methodology_score": <integer from 0 to 100>,
+                    "reason": "<brief justification details>"
+                }}
+                """
                 
                 # 4. Request LLM evaluation with JSON format requirement
                 ai_res = gl.nondet.exec_prompt(prompt, response_format="json")
